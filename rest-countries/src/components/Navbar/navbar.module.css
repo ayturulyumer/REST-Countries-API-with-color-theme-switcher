@@ -1,0 +1,39 @@
+.header {
+  height: 5em;
+  -webkit-box-shadow: 7px 18px 82px -24px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 7px 18px 82px -24px rgba(0, 0, 0, 0.75);
+  box-shadow: 7px 18px 82px -24px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.7em;
+}
+
+.wrapper h1 {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.wrapper span i {
+  font-size: 18px;
+}
+.wrapper span {
+  display: flex;
+  font-size: 14px;
+  font-weight: 600;
+  justify-content: space-between;
+  gap: 0.5em;
+  align-items: baseline;
+  cursor: pointer;
+}
+
+@media (min-width: 800px) {
+  .wrapper h1 {
+    font-size: 18px;
+  }
+  .wrapper span {
+    font-size: 16px;
+  }
+}
