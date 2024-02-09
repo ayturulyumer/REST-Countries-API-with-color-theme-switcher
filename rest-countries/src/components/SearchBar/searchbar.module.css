@@ -6,7 +6,7 @@
   color: hsl(0, 0%, 52%);
   height: 1.5em;
   width: 1.5em;
-  padding: 5px;
+  padding: 10px;
   position: absolute;
   top: 33%;
   left: 3em;
@@ -16,16 +16,16 @@
   width: 85%;
   border-radius: 0.5em;
   border: none;
-  margin: 2em 2em 3em 2em;
+  margin: 2em;
   height: 4em;
-  padding-left: 1.5rem;
+  padding-left: 2rem;
 }
 
 .search input::placeholder {
   color: hsl(0, 0%, 52%);
   font-size: 14px;
   position: absolute;
-  left: 5em;
+  left: 5.5em;
 }
 
 @media (min-width: 800px){
