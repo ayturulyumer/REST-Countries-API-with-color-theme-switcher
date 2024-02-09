@@ -13,10 +13,10 @@
 }
 
 .search input {
-  width: 85%;
+  width: 100%;
   border-radius: 0.5em;
   border: none;
-  margin: 2em;
+  margin: 2em 2em 1em 1em;
   height: 4em;
   padding-left: 5.8em;
 }
@@ -30,6 +30,6 @@
 
 @media (min-width: 800px){
     .search input{
-        width: 40%;
+        width: 100%;
     }
 }

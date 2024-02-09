@@ -6,7 +6,6 @@
   background-color: #fff;
   border-radius: 2px;
   margin-left: 3em;
-  box-shadow: 0 0 2px rgb(204, 204, 204);
   transition: all .5s ease;
   position: relative;
   font-size: 14px;
@@ -61,4 +60,11 @@
 .dropdown.active .dropdown-menu {
   display: block;
 }
+
+@media (min-width: 800px){
+  .dropdown{
+      margin-right: 2em;
+  }
+}
+
 
