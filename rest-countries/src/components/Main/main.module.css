@@ -1,12 +1,26 @@
-.container {
+.upper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: baseline;
 }
 
+.main {
+  margin: 3em 2em 2em 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 @media (min-width: 800px) {
-  .container {
+  .upper,.main {
     flex-direction: row;
+  }
+
+  .main{
+    justify-content: flex-start;
+    gap: 3em;
   }
 }
