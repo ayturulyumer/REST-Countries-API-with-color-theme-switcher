@@ -11,3 +11,9 @@ body {
   background-color: hsl(0, 0%, 98%);
   height: 100vh;
 }
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
