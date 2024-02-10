@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 20em;
+  align-items: center;
+  gap: 1em;
+}
+
+.image{
+    width: 17em;
+}
+
+img {
+  border-radius: 10px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2em;
+}
+
+.info h2 {
+  font-size: 16px;
+  margin-bottom: 1em;
+}
+
+.info p {
+  font-size: 14px;
+  margin-bottom: 0.5em;
+}
+
+@media (min-width: 800px){
+    .container{
+    align-items: center;
+    }
+}
