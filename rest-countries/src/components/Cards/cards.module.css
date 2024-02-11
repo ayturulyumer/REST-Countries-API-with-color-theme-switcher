@@ -3,11 +3,16 @@
   flex-direction: column;
   width: 20em;
   align-items: center;
-  gap: 1em;
+  gap: 3em;
 }
 
 @media (min-width: 800px) {
   .container {
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
+    gap: 2em;
   }
 }
