@@ -15,11 +15,12 @@
 }
 
 @media (min-width: 800px) {
-  .upper,.main {
+  .upper,
+  .main {
     flex-direction: row;
   }
 
-  .main{
+  .main {
     justify-content: flex-start;
     gap: 3em;
   }
