@@ -1,7 +1,7 @@
 import SearchBar from "../SearchBar/SearchBar.jsx";
 import Filter from "../Filter/Filter.jsx";
 import styles from "./main.module.css";
-import Card from "../Card/Card.jsx";
+import Cards from "../Cards/Cards.jsx";
 
 export default function Main() {
   return (
@@ -11,7 +11,7 @@ export default function Main() {
         <Filter />
       </div>
       <div className={styles.main}>
-       <Card/>
+       <Cards/>
       </div>
     </>
   );
