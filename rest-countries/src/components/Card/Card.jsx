@@ -3,7 +3,6 @@ import styles from "./card.module.css";
 export default function Card() {
   return (
     <>
-    <div className={styles.container}>
       <div className={styles.image}>
         <img
           src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png"
@@ -22,7 +21,6 @@ export default function Card() {
           <strong>Capital:</strong> Sofia
         </p>
       </div>
-    </div>
     </>
     
   );
