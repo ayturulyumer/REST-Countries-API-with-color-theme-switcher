@@ -1,27 +1,26 @@
 import styles from "./card.module.css";
 
-export default function Card() {
+export default function Card({ country }) {
   return (
-    <>
+    <div className={styles.container}>
       <div className={styles.image}>
         <img
-          src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png"
-          alt=""
+          src={country.flags.png}
+          alt={country.flags.alt}
         />
       </div>
       <div className={styles.info}>
-        <h2>United States of America</h2>
+        <h2>{country.name.common}</h2>
         <p>
-          <strong>Population:</strong> 93,273,900
+          <strong>Population:</strong> {country.population}
         </p>
         <p>
           <strong>Region:</strong> Europe
         </p>
         <p>
-          <strong>Capital:</strong> Sofia
+          <strong>Capital:</strong> {country.capital[0]}
         </p>
       </div>
-    </>
-    
+      </div>
   );
 }
