@@ -1,13 +1,16 @@
 import styles from "./card.module.css";
+import { Link } from "react-router-dom";
 
 export default function Card({ country }) {
   return (
     <div className={styles.container}>
       <div className={styles.image}>
+      <Link to={`/details/${country.name.common}`}>
         <img
           src={country.flags.png}
           alt={country.flags.alt}
         />
+        </Link>
       </div>
       <div className={styles.info}>
         <h2>{country.name.common}</h2>
@@ -15,7 +18,7 @@ export default function Card({ country }) {
           <strong>Population:</strong> {country.population}
         </p>
         <p>
-          <strong>Region:</strong> Europe
+          <strong>Region:</strong> {country.region}
         </p>
         <p>
           <strong>Capital:</strong> {country.capital[0]}
