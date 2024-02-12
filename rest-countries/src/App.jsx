@@ -1,12 +1,20 @@
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Main from "./components/Main/Main.jsx";
+import Details from "./components/Details/Details.jsx";
 import "./app.css";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Main />
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/details/:country" element={<Details />} />
+        </Routes>
+      </Router>
     </>
   );
 }
