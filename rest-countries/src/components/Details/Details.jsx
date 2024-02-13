@@ -2,6 +2,8 @@ import styles from "./details.module.css";
 
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 import * as countriesApi from "../../api/countriesApi.js";
 import { getObjProperties } from "../../utils/getObjProperties.js";
 import { formatPopulation } from "../../utils/formatPopulation.js";
@@ -10,6 +12,7 @@ import { extractLanguageNames } from "../../utils/extractLanguageNames.js";
 export default function Details() {
   const [country, setCountry] = useState([]);
   const { countryName } = useParams();
+  const navigateTo = useNavigate();
 
   // Get First Property of Native Name Object
   let nativeName = "";
@@ -35,8 +38,6 @@ export default function Details() {
     languages = extractLanguageNames(country[0].languages);
   }
 
-  console.log(country[0]?.capital)
-
   useEffect(() => {
     countriesApi
       .getCountry(countryName)
@@ -47,7 +48,7 @@ export default function Details() {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
-        <button className={styles.back}>
+        <button className={styles.back} onClick={() => navigateTo("/")}>
           <i className="fa-solid fa-arrow-left" />
           Back
         </button>
