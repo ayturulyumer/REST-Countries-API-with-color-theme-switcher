@@ -35,6 +35,8 @@ export default function Details() {
     languages = extractLanguageNames(country[0].languages);
   }
 
+  console.log(country[0]?.capital)
+
   useEffect(() => {
     countriesApi
       .getCountry(countryName)
@@ -67,10 +69,12 @@ export default function Details() {
               <strong>Region:</strong> {country[0]?.region}
             </p>
             <p>
-              <strong>Sub Region:</strong> {country[0]?.subregion}
+              <strong>Sub Region:</strong>{" "}
+              {country[0]?.subregion === "" ? "None" : country[0]?.subregion}
             </p>
             <p>
-              <strong>Capital:</strong> {country[0]?.capital}
+              <strong>Capital:</strong>{" "}
+              {country[0]?.capital.length === 0 ? "None" : country[0]?.capital}
             </p>
           </div>
           <div className={styles.secondaryinfo}>
@@ -78,7 +82,8 @@ export default function Details() {
               <strong>Top Level Domain:</strong> {country[0]?.tld}
             </p>
             <p>
-              <strong>Currencies:</strong> {currencies[0]?.name}
+              <strong>Currencies:</strong>
+              {currencies === undefined ? "None" : currencies[0]?.name}
             </p>
             <p>
               <strong>Languages:</strong> {languages}
