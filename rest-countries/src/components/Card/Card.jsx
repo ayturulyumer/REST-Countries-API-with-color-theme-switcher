@@ -1,5 +1,6 @@
 import styles from "./card.module.css";
 import { Link } from "react-router-dom";
+import { formatPopulation } from "../../utils/formatPopulation.js";
 
 export default function Card({ country }) {
   return (
@@ -15,7 +16,7 @@ export default function Card({ country }) {
       <div className={styles.info}>
         <h2>{country.name.common}</h2>
         <p>
-          <strong>Population:</strong> {country.population}
+          <strong>Population:</strong> {formatPopulation(country.population)}
         </p>
         <p>
           <strong>Region:</strong> {country.region}
