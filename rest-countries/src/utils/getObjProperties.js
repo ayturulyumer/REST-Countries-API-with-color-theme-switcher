@@ -1,4 +1,4 @@
- export function getFirstProperty(obj , numProperties) {
+ export function getObjProperties(obj , numProperties) {
     // Check if the object is empty
     if (Object.keys(obj).length === 0) {
         return undefined; // Return undefined if the object is empty
