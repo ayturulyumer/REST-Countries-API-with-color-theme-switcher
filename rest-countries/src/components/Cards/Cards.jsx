@@ -3,7 +3,7 @@ import Card from "../Card/Card.jsx";
 import { useState, useEffect } from "react";
 import * as countriesApi from "../../api/countriesApi.js";
 
-export default function Cards() {
+export default function Cards({ selectedRegion }) {
   const [countries, setCountries] = useState([]);
   useEffect(() => {
     countriesApi
