@@ -6,11 +6,22 @@ import * as countriesApi from "../../api/countriesApi.js";
 export default function Cards({ selectedRegion }) {
   const [countries, setCountries] = useState([]);
   useEffect(() => {
-    countriesApi
-      .getCountries()
-      .then((result) => setCountries(result))
-      .catch((err) => console.log(err));
-  }, []);
+    const fetchCountries = async () => {
+      try {
+        let result;
+        if (selectedRegion === "Filter by Region") {
+          result = await countriesApi.getAllCountries();
+        } else {
+          result = await countriesApi.getCountriesByRegion(selectedRegion);
+        }
+        setCountries(result);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchCountries();
+  }, [selectedRegion]);
 
   return (
     <div className={styles.container}>
