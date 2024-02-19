@@ -11,7 +11,7 @@ export default function Main() {
   const handleRegionChange = (region) => {
     setSelectedRegion(region);
   };
-  console.log(selectedRegion);
+
   return (
     <>
       <div className={styles.upper}>
@@ -22,7 +22,7 @@ export default function Main() {
         />
       </div>
       <div className={styles.main}>
-        <Cards />
+        <Cards selectedRegion={selectedRegion} />
       </div>
     </>
   );
