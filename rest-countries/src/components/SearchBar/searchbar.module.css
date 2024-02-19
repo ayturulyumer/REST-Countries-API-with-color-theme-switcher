@@ -1,4 +1,5 @@
 .wrapper {
+  margin-left: 2em;
   position: relative;
 }
 
@@ -8,7 +9,7 @@
   width: 1.5em;
   padding: 10px;
   position: absolute;
-  top: 33%;
+  top: 35%;
   left: 3em;
 }
 
@@ -31,5 +32,8 @@
 @media (min-width: 800px){
     .search input{
         width: 100%;
+    }
+    .wrapper {
+      margin-left: 5em;
     }
 }

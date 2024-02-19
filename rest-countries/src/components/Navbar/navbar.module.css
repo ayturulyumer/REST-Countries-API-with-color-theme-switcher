@@ -14,6 +14,7 @@
 .wrapper h1 {
   font-size: 16px;
   font-weight: 800;
+  flex: 1 1 100%;
 }
 
 .wrapper span i {
@@ -32,6 +33,7 @@
 @media (min-width: 800px) {
   .wrapper h1 {
     font-size: 18px;
+    margin-left: 3.5em;
   }
   .wrapper span {
     font-size: 16px;
