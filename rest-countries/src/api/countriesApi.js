@@ -1,10 +1,15 @@
 import * as request from "../lib/request.js";
 const baseUrl = "https://restcountries.com/v3.1";
 
-export const getCountries = async () => {
+export const getAllCountries = async () => {
   const result = request.get(
     `${baseUrl}/all?fields=flags,name,population,capital,region`
   );
+  return result;
+};
+
+export const getCountriesByRegion = async (region) => {
+  const result = request.get(`${baseUrl}/region/${region}`);
   return result;
 };
 
