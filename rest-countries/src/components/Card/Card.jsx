@@ -6,11 +6,8 @@ export default function Card({ country }) {
   return (
     <div className={styles.container}>
       <div className={styles.image}>
-      <Link to={`/details/${country.name.common}`}>
-        <img
-          src={country.flags.png}
-          alt={country.flags.alt}
-        />
+        <Link to={`/details/${country.name.common}`}>
+          <img src={country.flags.png} alt={country.flags.alt} />
         </Link>
       </div>
       <div className={styles.info}>
@@ -22,9 +19,9 @@ export default function Card({ country }) {
           <strong>Region:</strong> {country.region}
         </p>
         <p>
-          <strong>Capital:</strong> {country.capital[0]}
+          <strong>Capital:</strong> {country.capital === undefined ? "undefined" : country.capital[0]}
         </p>
       </div>
-      </div>
+    </div>
   );
 }
