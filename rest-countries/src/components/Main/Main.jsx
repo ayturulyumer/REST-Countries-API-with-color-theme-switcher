@@ -31,7 +31,7 @@ export default function Main() {
         />
       </div>
       <div className={styles.main}>
-        <Cards selectedRegion={selectedRegion} />
+        <Cards selectedRegion={selectedRegion} searchQuery={searchQuery}/>
       </div>
     </>
   );
