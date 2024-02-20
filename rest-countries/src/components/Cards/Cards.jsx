@@ -3,7 +3,7 @@ import Card from "../Card/Card.jsx";
 import { useState, useEffect } from "react";
 import * as countriesApi from "../../api/countriesApi.js";
 
-export default function Cards({ selectedRegion }) {
+export default function Cards({ selectedRegion, searchQuery }) {
   const [countries, setCountries] = useState([]);
   useEffect(() => {
     const fetchCountries = async () => {
@@ -22,6 +22,17 @@ export default function Cards({ selectedRegion }) {
 
     fetchCountries();
   }, [selectedRegion]);
+
+  useEffect(() => {
+    if (searchQuery !== "") {
+      countriesApi
+        .getCountryByQuery(searchQuery)
+        .then((data) => setCountries(data))
+        .catch((err) => console.log(err));
+    }
+  }, [searchQuery]);
+
+  console.log(countries)
 
   return (
     <div className={styles.container}>
