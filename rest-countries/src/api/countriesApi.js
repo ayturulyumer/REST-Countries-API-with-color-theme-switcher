@@ -19,3 +19,10 @@ export const getCountry = async (countryName) => {
   );
   return result;
 };
+
+export const getCountryByQuery = async (query) => {
+  const result = request.get(
+    `${baseUrl}/name/${query}?fields=flags,name,population,capital,region`
+  );
+  return result;
+};
