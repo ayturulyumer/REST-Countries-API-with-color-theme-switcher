@@ -11,6 +11,7 @@
   position: absolute;
   top: 35%;
   left: 3em;
+  cursor: pointer;
 }
 
 .search input {
