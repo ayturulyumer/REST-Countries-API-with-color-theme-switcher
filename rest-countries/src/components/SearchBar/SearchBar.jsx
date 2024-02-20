@@ -1,6 +1,10 @@
 import styles from "./searchbar.module.css";
 
-export default function SearchBar() {
+export default function SearchBar({ onSearchChange }) {
+  const changeHandler = (event) => {
+    onSearchChange(event.target.value);
+  };
+
   return (
     <div className={styles.wrapper}>
       <form className={styles.search} method="POST">
@@ -9,8 +13,7 @@ export default function SearchBar() {
           type="text"
           name="searchInput"
           placeholder="Search for a country..."
-          // value={values.searchInput}
-          // onChange={changeHandler}
+          onChange={changeHandler}
         />
       </form>
     </div>
