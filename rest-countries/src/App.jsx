@@ -1,24 +1,26 @@
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Main from "./components/Main/Main.jsx";
 import Details from "./components/Details/Details.jsx";
-import { ThemeProvider } from "./contexts/ThemeContext.jsx";
+import ThemeContext from "./contexts/ThemeContext.jsx";
+import { useContext } from "react";
 import "./app.css";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
+  const { theme } = useContext(ThemeContext);
+ 
+
   return (
     <>
       <Router>
-        <ThemeProvider>
-          <div className="App" id="light">
-            <Navbar />
-            <Routes>
-              <Route path="/" element={<Main />} />
-              <Route path="/details/:countryName" element={<Details />} />
-            </Routes>
-          </div>
-        </ThemeProvider>
+        <div className="App" id={theme}>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/details/:countryName" element={<Details />} />
+          </Routes>
+        </div>
       </Router>
     </>
   );

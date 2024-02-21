@@ -32,7 +32,7 @@ export default function Cards({ selectedRegion, searchQuery }) {
     }
   }, [searchQuery]);
 
-  console.log(countries)
+
 
   return (
     <div className={styles.container}>

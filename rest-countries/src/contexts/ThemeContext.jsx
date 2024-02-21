@@ -10,14 +10,14 @@ export const ThemeProvider = ({ children }) => {
     // Optionally, save theme preference to local storage
   };
 
-
   const value = {
     theme,
     toggleTheme,
   };
 
-
   return (
     <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
 };
+
+export default ThemeContext;
