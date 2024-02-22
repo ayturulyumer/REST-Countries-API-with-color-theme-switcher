@@ -7,7 +7,9 @@
   box-sizing: border-box;
 }
 
-
+body {
+  height: 100vh;
+}
 
 img {
   display: block;
@@ -15,21 +17,20 @@ img {
   height: auto;
 }
 
-#light,#dark{
-  height: 100%;
-}
 
 #light {
   background-color: #ffff;
+  color: black;
+}
+
+.App {
+  height: 100vh;
+  overflow: auto;
 }
 
 #dark {
   background-color: #212e37;
   color: #ffff;
-}
-
-#dark body {
-  background-color: #212e37;
 }
 
 #dark ._search_b2rl4_11 input {
@@ -65,13 +66,18 @@ img {
   color: white;
 }
 
-#dark ._image_1m5l4_7, ._image_t91cp_9 img {
+#dark ._image_1m5l4_7,
+._image_t91cp_9 img {
   box-shadow: none;
 }
 
-._back_t91cp_73{
+#dark ._back_t91cp_73 {
   background-color: #212e37;
   color: #ffff;
-  box-shadow: 10px 10px 39px 1px rgba(0,0,0,0.3);
+  box-shadow: 10px 10px 39px 1px rgba(0, 0, 0, 0.3);
   border-radius: 0.5em;
+}
+
+._container_t91cp_1 {
+  height: 100%;
 }

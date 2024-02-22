@@ -14,10 +14,10 @@ export default function Navbar() {
         <span onClick={toggleTheme}>
           <i
             className={
-              theme === "light" ? "fa-regular fa-sun" : "fa-regular fa-moon"
+              theme === "light" ? "fa-regular fa-moon" : "fa-regular fa-sun"
             }
           ></i>
-          {theme === "light" ? "Light Mode" : "Dark Mode"}
+          {theme === "light" ? "Dark Mode" : "Light Mode"}
         </span>
       </div>
     </header>

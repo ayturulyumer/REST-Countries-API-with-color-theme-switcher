@@ -16,7 +16,6 @@ export default function Main() {
     setSearchQuery(searchInput);
   };
 
-  console.log(searchQuery)
   const handleRegionChange = (region) => {
     setSelectedRegion(region);
   };
