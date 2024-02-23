@@ -9,9 +9,11 @@ import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
 import { getObjProperties } from "../../utils/getObjProperties.js";
 import { formatPopulation } from "../../utils/formatPopulation.js";
 import { extractLanguageNames } from "../../utils/extractLanguageNames.js";
+import Spinner from "../Spinner/Spinner.jsx";
 
 export default function Details() {
   const [country, setCountry] = useState([]);
+  const [loading, setShowLoading] = useState(false);
   const [error, setError] = useState("");
 
   const { countryName } = useParams();
@@ -42,6 +44,7 @@ export default function Details() {
   }
 
   useEffect(() => {
+    setShowLoading(true);
     countriesApi
       .getCountry(countryName)
       .then((result) => setCountry(result))
@@ -50,18 +53,21 @@ export default function Details() {
           setError(error);
           setTimeout(() => {
             setError("");
-            navigateTo(-1)
+            navigateTo(-1);
           }, 2000);
         }
+      })
+      .finally(() => {
+        setShowLoading(false);
       });
   }, [countryName]);
 
-  console.log(error);
-
+  
   return (
     <div className={styles.container}>
+      {loading && <Spinner />}
       {error && <ErrorMessage error={error} />}
-      {!error && (
+      {!error && !loading && (
         <>
           <div className={styles.left}>
             <button className={styles.back} onClick={() => navigateTo("/")}>

@@ -1,13 +1,16 @@
 import styles from "./cards.module.css";
 import Card from "../Card/Card.jsx";
 import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
+import Spinner from "../Spinner/Spinner.jsx";
 import { useState, useEffect } from "react";
 import * as countriesApi from "../../api/countriesApi.js";
 
 export default function Cards({ selectedRegion, searchQuery }) {
   const [countries, setCountries] = useState([]);
+  const [loading, setShowLoading] = useState(false);
   const [error, setError] = useState("");
   useEffect(() => {
+    setShowLoading(true);
     const fetchCountries = async () => {
       try {
         let result;
@@ -20,6 +23,8 @@ export default function Cards({ selectedRegion, searchQuery }) {
       } catch (error) {
         setError(error);
         setTimeout(() => setError(""), 2000);
+      } finally {
+        setShowLoading(false);
       }
     };
 
@@ -27,6 +32,7 @@ export default function Cards({ selectedRegion, searchQuery }) {
   }, [selectedRegion]);
 
   useEffect(() => {
+    setShowLoading(true);
     if (searchQuery !== "") {
       countriesApi
         .getCountryByQuery(searchQuery)
@@ -34,18 +40,21 @@ export default function Cards({ selectedRegion, searchQuery }) {
         .catch(
           (error) => setError(error),
           setTimeout(() => setError(""), 2000)
-        );
+        )
+        .finally(() => {
+          setShowLoading(false);
+        });
     }
   }, [searchQuery]);
 
-  console.log(error);
-
   return (
     <div className={styles.container}>
+      {loading && <Spinner />}
       {error && <ErrorMessage error={error} />}
-      {!error && countries.map((country, index) => (
-        <Card key={index} country={country} />
-      ))}
+      {!error &&
+        countries.map((country, index) => (
+          <Card key={index} country={country} />
+        ))}
     </div>
   );
 }
