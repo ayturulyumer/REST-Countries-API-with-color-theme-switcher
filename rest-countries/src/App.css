@@ -17,7 +17,6 @@ img {
   height: auto;
 }
 
-
 #light {
   background-color: #ffff;
   color: black;
@@ -46,7 +45,7 @@ img {
 }
 
 #dark ._dropdown-menu_15st5_77 {
-  background-color: #212e37;
+  background-color: #2b3743;
 }
 
 #dark ._dropdown-menu_15st5_77 {
@@ -55,7 +54,7 @@ img {
 
 #dark ._select_15st5_45 {
   color: #ffff;
-  background-color: #212e37;
+  background-color: #2b3743;
 }
 
 #dark ._select_15st5_45 > i {
@@ -80,4 +79,8 @@ img {
 
 ._container_t91cp_1 {
   height: 100%;
+}
+
+#dark ._info_1m5l4_41 {
+  background-color: #2b3743;
 }
