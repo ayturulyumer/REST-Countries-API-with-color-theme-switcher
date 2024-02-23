@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar/Navbar.jsx";
 import Main from "./components/Main/Main.jsx";
 import Details from "./components/Details/Details.jsx";
 import ThemeContext from "./contexts/ThemeContext.jsx";
+import NotFound from "./components/NotFound/NotFound.jsx";
 import { useContext } from "react";
 import "./app.css";
 
@@ -9,7 +10,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const { theme } = useContext(ThemeContext);
- 
 
   return (
     <>
@@ -19,6 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/details/:countryName" element={<Details />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
       </Router>

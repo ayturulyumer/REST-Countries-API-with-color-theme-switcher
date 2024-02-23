@@ -1,0 +1,22 @@
+.container {
+  text-align: center;
+  color: black;
+}
+.error {
+  font-size: 30rem;
+  margin-bottom: 1rem;
+}
+.container p {
+    font-weight: bold;
+    margin-top: 1rem;
+}
+.container button {
+  border: 1px solid white;
+  padding: 10px;
+  text-align: center;
+  background: #000000; 
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}
