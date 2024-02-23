@@ -32,8 +32,12 @@ img {
   color: #ffff;
 }
 
+#dark ._header_1dqnc_1{
+  background-color: #2b3743;
+}
+
 #dark ._search_b2rl4_11 input {
-  background-color: #212e37;
+  background-color: #2b3743;
 }
 
 #dark ._search_b2rl4_11 input::placeholder {
