@@ -1,4 +1,6 @@
 .container {
+  display: flex;
+  justify-content: center;
   margin-top: 2em;
   max-height: 100vh;
 }
@@ -12,9 +14,9 @@
   height: 100%;
   border-radius: 5px;
   object-fit: fill;
-  -webkit-box-shadow: 2px 2px 34px 5px rgba(204, 196, 204, 1);
-  -moz-box-shadow: 2px 2px 34px 5px rgba(204, 196, 204, 1);
-  box-shadow: 2px 2px 34px 5px rgba(204, 196, 204, 1);
+    -webkit-box-shadow: 2px 2px 34px 5px rgba(204, 196, 204, 1);
+    -moz-box-shadow: 2px 2px 34px 5px rgba(204, 196, 204, 1);
+    box-shadow: 2px 2px 34px 5px rgba(204, 196, 204, 1);
 }
 
 .info {

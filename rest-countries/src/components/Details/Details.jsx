@@ -5,12 +5,15 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import * as countriesApi from "../../api/countriesApi.js";
+import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
 import { getObjProperties } from "../../utils/getObjProperties.js";
 import { formatPopulation } from "../../utils/formatPopulation.js";
 import { extractLanguageNames } from "../../utils/extractLanguageNames.js";
 
 export default function Details() {
   const [country, setCountry] = useState([]);
+  const [error, setError] = useState("");
+
   const { countryName } = useParams();
   const navigateTo = useNavigate();
 
@@ -42,70 +45,89 @@ export default function Details() {
     countriesApi
       .getCountry(countryName)
       .then((result) => setCountry(result))
-      .catch((err) => console.log(err));
+      .catch((error) => {
+        if (error) {
+          setError(error);
+          setTimeout(() => {
+            setError("");
+            navigateTo(-1)
+          }, 2000);
+        }
+      });
   }, [countryName]);
+
+  console.log(error);
 
   return (
     <div className={styles.container}>
-      <div className={styles.left}>
-        <button className={styles.back} onClick={() => navigateTo("/")}>
-          <i className="fa-solid fa-arrow-left" />
-          Back
-        </button>
-        <div className={styles.image}>
-          <img src={country[0]?.flags?.png} alt={country[0]?.flags?.alt} />
-        </div>
-      </div>
-      <div className={styles.info}>
-        <h2>{country[0]?.name?.common}</h2>
-        <div className={styles.details}>
-          <div className={styles.maininfo}>
-            <p>
-              <strong>Native Name:</strong> {nativeName[0]?.common}
-            </p>
-            <p>
-              <strong>Population:</strong> {population}
-            </p>
-            <p>
-              <strong>Region:</strong> {country[0]?.region}
-            </p>
-            <p>
-              <strong>Sub Region:</strong>{" "}
-              {country[0]?.subregion === "" ? "None" : country[0]?.subregion}
-            </p>
-            <p>
-              <strong>Capital:</strong>{" "}
-              {country[0]?.capital.length === 0 ? "None" : country[0]?.capital}
-            </p>
-          </div>
-          <div className={styles.secondaryinfo}>
-            <p>
-              <strong>Top Level Domain:</strong> {country[0]?.tld}
-            </p>
-            <p>
-              <strong>Currencies:</strong>
-              {currencies === undefined ? "None" : currencies[0]?.name}
-            </p>
-            <p>
-              <strong>Languages:</strong> {languages}
-            </p>
-          </div>
-          <div className={styles.borders}>
-            <p>
-              <strong>Border Countries:</strong>
-            </p>
-            <div className={styles.countriescontainer}>
-              {country[0]?.borders.length === 0 ? (
-                <span>None</span>
-              ) : (
-                country[0]?.borders.map((border) => (
-                  <span key={border}>{border}</span>
-                ))
-              )}
+      {error && <ErrorMessage error={error} />}
+      {!error && (
+        <>
+          <div className={styles.left}>
+            <button className={styles.back} onClick={() => navigateTo("/")}>
+              <i className="fa-solid fa-arrow-left" />
+              Back
+            </button>
+            <div className={styles.image}>
+              <img src={country[0]?.flags?.png} alt={country[0]?.flags?.alt} />
             </div>
           </div>
-        </div>
-      </div>
+          <div className={styles.info}>
+            <h2>{country[0]?.name?.common}</h2>
+            <div className={styles.details}>
+              <div className={styles.maininfo}>
+                <p>
+                  <strong>Native Name:</strong> {nativeName[0]?.common}
+                </p>
+                <p>
+                  <strong>Population:</strong> {population}
+                </p>
+                <p>
+                  <strong>Region:</strong> {country[0]?.region}
+                </p>
+                <p>
+                  <strong>Sub Region:</strong>{" "}
+                  {country[0]?.subregion === ""
+                    ? "None"
+                    : country[0]?.subregion}
+                </p>
+                <p>
+                  <strong>Capital:</strong>{" "}
+                  {country[0]?.capital.length === 0
+                    ? "None"
+                    : country[0]?.capital}
+                </p>
+              </div>
+              <div className={styles.secondaryinfo}>
+                <p>
+                  <strong>Top Level Domain:</strong> {country[0]?.tld}
+                </p>
+                <p>
+                  <strong>Currencies:</strong>
+                  {currencies === undefined ? "None" : currencies[0]?.name}
+                </p>
+                <p>
+                  <strong>Languages:</strong> {languages}
+                </p>
+              </div>
+              <div className={styles.borders}>
+                <p>
+                  <strong>Border Countries:</strong>
+                </p>
+                <div className={styles.countriescontainer}>
+                  {country[0]?.borders.length === 0 ? (
+                    <span>None</span>
+                  ) : (
+                    country[0]?.borders.map((border) => (
+                      <span key={border}>{border}</span>
+                    ))
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }
