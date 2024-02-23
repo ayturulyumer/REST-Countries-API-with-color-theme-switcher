@@ -1,10 +1,12 @@
 import styles from "./cards.module.css";
 import Card from "../Card/Card.jsx";
+import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
 import { useState, useEffect } from "react";
 import * as countriesApi from "../../api/countriesApi.js";
 
 export default function Cards({ selectedRegion, searchQuery }) {
   const [countries, setCountries] = useState([]);
+  const [error, setError] = useState("");
   useEffect(() => {
     const fetchCountries = async () => {
       try {
@@ -16,7 +18,8 @@ export default function Cards({ selectedRegion, searchQuery }) {
         }
         setCountries(result);
       } catch (error) {
-        console.log(error);
+        setError(error);
+        setTimeout(() => setError(""), 2000);
       }
     };
 
@@ -28,15 +31,19 @@ export default function Cards({ selectedRegion, searchQuery }) {
       countriesApi
         .getCountryByQuery(searchQuery)
         .then((data) => setCountries(data))
-        .catch((err) => console.log(err));
+        .catch(
+          (error) => setError(error),
+          setTimeout(() => setError(""), 2000)
+        );
     }
   }, [searchQuery]);
 
-
+  console.log(error);
 
   return (
     <div className={styles.container}>
-      {countries.map((country, index) => (
+      {error && <ErrorMessage error={error} />}
+      {!error && countries.map((country, index) => (
         <Card key={index} country={country} />
       ))}
     </div>
