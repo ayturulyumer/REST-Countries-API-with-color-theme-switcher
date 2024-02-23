@@ -32,6 +32,18 @@ img {
   color: #ffff;
 }
 
+
+#dark button{
+  background-color: #212e37;
+  color: #ffff;
+  box-shadow: 10px 10px 39px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 0.5em;
+}
+
+#dark img{
+  box-shadow: none;
+}
+
 #dark ._header_1dqnc_1{
   background-color: #2b3743;
 }
@@ -69,19 +81,11 @@ img {
   color: white;
 }
 
-#dark ._image_1m5l4_7,
-._image_t91cp_9 img {
-  box-shadow: none;
-}
 
-#dark ._back_enfsc_77 {
-  background-color: #212e37;
-  color: #ffff;
-  box-shadow: 10px 10px 39px 1px rgba(0, 0, 0, 0.3);
-  border-radius: 0.5em;
-}
 
-#dark ._image_enfsc_13 img{
+
+
+#dark ._image_k0qat_9 img{
   box-shadow: none;
 }
 
