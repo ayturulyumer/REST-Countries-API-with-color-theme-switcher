@@ -1,0 +1,6 @@
+{
+  "moduleNameMapper": {
+    "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/src/test/fileMock.js",
+    "\\.(css|less)$": "<rootDir>/src/test/fileMock.js"
+  }
+}
