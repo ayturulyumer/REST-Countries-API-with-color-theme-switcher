@@ -23,7 +23,7 @@ export default function Filter({ onRegionChange, selectedRegion }) {
           value={selectedRegion}
           onChange={onRegionChange}
         >
-          <span>{selectedRegion}</span>
+          <span data-testid="selected-region">{selectedRegion}</span>
           <i className="fa-solid fa-arrow-down"></i>
         </div>
         <input type="hidden" name="continent" />
