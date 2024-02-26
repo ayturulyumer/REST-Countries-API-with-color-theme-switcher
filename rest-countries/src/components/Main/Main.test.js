@@ -1,24 +1,36 @@
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, act } from "@testing-library/react";
 import Main from "./Main";
 
 describe("Main component", () => {
   test("renders without crashing", () => {
-    render(<Main />);
+    act(() => {
+      render(<Main />);
+    });
   });
 
   test("renders child components", () => {
-    const { getByTestId } = render(<Main />);
+    let component;
+    act(() => {
+      component = render(<Main />);
+    });
+    const { getByTestId } = component;
     expect(getByTestId("search-bar")).toBeInTheDocument();
     expect(getByTestId("filter")).toBeInTheDocument();
     expect(getByTestId("cards")).toBeInTheDocument();
   });
 
   test("onSearchHandler updates searchQuery state correctly", () => {
-    const { getByPlaceholderText } = render(<Main />);
+    let component;
+    act(() => {
+      component = render(<Main />);
+    });
+    const { getByPlaceholderText } = component;
     const searchInput = getByPlaceholderText("Search for a country...");
 
-    // Simulate a change event on the search input
-    fireEvent.change(searchInput, { target: { value: "test query" } });
+    act(() => {
+      // Simulate a change event on the search input
+      fireEvent.change(searchInput, { target: { value: "test query" } });
+    });
 
     // Retrieve the value of the input field
     const inputValue = searchInput.value;
@@ -28,15 +40,23 @@ describe("Main component", () => {
   });
 
   test("handleRegionChange updates selectedRegion state correctly", () => {
-    const { getByText, getByTestId } = render(<Main />);
+    let component;
+    act(() => {
+      component = render(<Main />);
+    });
+    const { getByText, getByTestId } = component;
     const filterDropdown = getByTestId("filter");
 
-    // Open the filter dropdown
-    fireEvent.click(filterDropdown);
+    act(() => {
+      // Open the filter dropdown
+      fireEvent.click(filterDropdown);
+    });
 
     // Find and click on the region option
     const regionOption = getByText("Europe");
-    fireEvent.click(regionOption);
+    act(() => {
+      fireEvent.click(regionOption);
+    });
 
     // Retrieve the value of the selected region
     const selectedRegion = regionOption.textContent;
