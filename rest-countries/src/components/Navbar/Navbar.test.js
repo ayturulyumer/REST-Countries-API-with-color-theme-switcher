@@ -27,9 +27,9 @@ describe("Navbar component", () => {
       </MemoryRouter>
     );
 
-    const switchButton = getByText("Dark Mode"); // Assuming "Dark Mode" is displayed initially
+    const switchButton = getByText("Dark Mode"); 
     fireEvent.click(switchButton);
 
-    expect(getByText("Light Mode")).toBeInTheDocument(); // Assert that the theme switched to Light Mode
+    expect(getByText("Light Mode")).toBeInTheDocument(); 
   });
 });
