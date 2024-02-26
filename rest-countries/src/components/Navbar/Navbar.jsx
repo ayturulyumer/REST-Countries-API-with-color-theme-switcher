@@ -1,4 +1,4 @@
-import * as styles from "./navbar.module.css";
+import  styles from "./navbar.module.css";
 import { Link } from "react-router-dom";
 import ThemeContext from "../../contexts/ThemeContext.jsx";
 import { useContext } from "react";
@@ -6,7 +6,7 @@ export default function Navbar() {
   const { toggleTheme, theme } = useContext(ThemeContext);
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} data-testid="navbar">
       <div className={styles.wrapper}>
         <Link to={"/"} style={{ textDecoration: "none", color: "inherit" }}>
           <h1>Where in the world?</h1>
