@@ -48,7 +48,7 @@ export default function Cards({ selectedRegion, searchQuery }) {
   }, [searchQuery]);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid="cards">
       {loading && <Spinner />}
       {error && <ErrorMessage error={error} />}
       {!error &&

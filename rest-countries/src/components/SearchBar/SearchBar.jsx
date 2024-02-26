@@ -12,7 +12,7 @@ export default function SearchBar({ onSearchChange }) {
   );
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} data-testid="search-bar">
       <form className={styles.search} method="POST" onSubmit={onSubmit}>
         <i className="fa fa-search"  onClick={onSubmit}/>
         <input

@@ -14,7 +14,7 @@ export default function Filter({ onRegionChange, selectedRegion }) {
   return (
     <>
       <div
-        className={`${styles.dropdown} ${isOpen ? styles.active : ""}`}
+        className={`${styles.dropdown}  ${isOpen ? styles.active : "" }` } data-testid="filter"
         onClick={toggleDropdown}
       >
         <div

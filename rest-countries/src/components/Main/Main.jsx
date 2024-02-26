@@ -5,12 +5,10 @@ import Cards from "../Cards/Cards.jsx";
 
 import { useState } from "react";
 
-
-
 export default function Main() {
   const [selectedRegion, setSelectedRegion] = useState("Filter by Region");
   const [searchQuery, setSearchQuery] = useState("");
- 
+
   const onSearchHandler = async (data) => {
     const { searchInput } = data;
     setSearchQuery(searchInput);
@@ -23,14 +21,17 @@ export default function Main() {
   return (
     <>
       <div className={styles.upper}>
-        <SearchBar  onSearchChange={onSearchHandler}/>
+        <SearchBar  onSearchChange={onSearchHandler} />
         <Filter
           onRegionChange={handleRegionChange}
           selectedRegion={selectedRegion}
         />
       </div>
       <div className={styles.main}>
-        <Cards selectedRegion={selectedRegion} searchQuery={searchQuery}/>
+        <Cards
+          selectedRegion={selectedRegion}
+          searchQuery={searchQuery}
+        />
       </div>
     </>
   );

@@ -1,4 +1,4 @@
-import styles from "./navbar.module.css";
+import * as styles from "./navbar.module.css";
 import { Link } from "react-router-dom";
 import ThemeContext from "../../contexts/ThemeContext.jsx";
 import { useContext } from "react";
