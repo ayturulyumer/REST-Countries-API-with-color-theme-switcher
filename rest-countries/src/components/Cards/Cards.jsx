@@ -49,8 +49,8 @@ export default function Cards({ selectedRegion, searchQuery }) {
 
   return (
     <div className={styles.container} data-testid="cards">
-      {loading && <Spinner />}
-      {error && <ErrorMessage error={error} />}
+      {loading && <Spinner  data-testid="loading-spinner"/>}
+      {error && <ErrorMessage error={error} data-testid="error-message"  />}
       {!error &&
         countries.map((country, index) => (
           <Card key={index} country={country} />
