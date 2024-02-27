@@ -39,9 +39,9 @@ To run the application locally, follow these steps:
 
    ## What I Learned
 
-1. **Implementing Dark Mode**: This project provided an opportunity to explore the implementation of dark mode in a web application. While I encountered challenges in designing and implementing the dark mode feature, I gained valuable insights into managing color schemes and enhancing user experience by providing a visually comfortable environment for users, especially in low-light conditions.
+ **Implementing Dark Mode**: This project provided an opportunity to explore the implementation of dark mode in a web application. While I encountered challenges in designing and implementing the dark mode feature, I gained valuable insights into managing color schemes and enhancing user experience by providing a visually comfortable environment for users, especially in low-light conditions.
 
-2. **Unit Testing with Jest and React Testing Library**: Through this project, I delved into unit testing methodologies using Jest, a popular JavaScript testing framework. Although I encountered some difficulties in writing comprehensive test cases and ensuring adequate test coverage, I gained valuable experience in writing tests for React components and verifying their behavior in different scenarios. Unit testing helped improve the reliability and robustness of the application by identifying and addressing potential issues early in the development process.
+ **Unit Testing with Jest and React Testing Library**: Through this project, I delved into unit testing methodologies using Jest, a popular JavaScript testing framework. Although I encountered some difficulties in writing comprehensive test cases and ensuring adequate test coverage, I gained valuable experience in writing tests for React components and verifying their behavior in different scenarios. Unit testing helped improve the reliability and robustness of the application by identifying and addressing potential issues early in the development process.
 
 
 
