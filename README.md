@@ -8,7 +8,7 @@ REST Countries API with Color Theme Switcher is a web application that allows us
 
 ## Deployment
 
-The project is deployed and accessible online. Users can access the site through [this link](https://nationsonline.netlify.app/).
+The project is deployed and accessible online. Users can access the site through https://nationsonline.netlify.app.
 
 ## Features
 
